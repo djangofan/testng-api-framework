@@ -62,40 +62,22 @@ public class TestJson {
 	
 	@Test
 	public void testXml() {
-		try {
+
 			XmlFactory xfactory = new XmlFactory();
-			ToXmlGenerator xGenerator = xfactory.createGenerator( new File( dataDir, "user.xml"), JsonEncoding.UTF8 );
-			xGenerator.useDefaultPrettyPrinter();
-			xGenerator.writeStartObject(); // {
-			xGenerator.writeObjectFieldStart("node"); // node: {
-			//xGenerator.writeStringField("type", "community"); // "type" : "community"
-			//xGenerator.writeObjectFieldStart("field_incentives"); // "field_incentives" : {
-			//xGenerator.writeFieldName("und"); // "und" :
-			//xGenerator.writeStartArray(); // [
-			//xGenerator.writeStartObject(); // {
-			//xGenerator.writeStringField("value", "fun"); // "value" : "fun"
-			//xGenerator.writeStringField("value", "nice"); // "value" : "nice"
-			//xGenerator.writeEndObject(); // }
-			//xGenerator.writeEndArray(); // ]
-			//xGenerator.writeEndObject(); // } end of field_incentives
-			//xGenerator.writeObjectFieldStart("field_community_email"); // "field_community_email" : {
-			//xGenerator.writeFieldName("und"); // "und" :
-			//xGenerator.writeStartArray(); // [
-			//xGenerator.writeStartObject(); // {
-			//xGenerator.writeStringField("value", "some@one.com"); // "value" : "fun"
-			//xGenerator.writeEndObject(); // }
-			//xGenerator.writeEndArray(); // ]
-			//xGenerator.writeEndObject(); // } end of field_community_email
-			xGenerator.writeEndObject(); // } end of node
-			xGenerator.writeEndObject(); // }
-			xGenerator.close();		
-		} catch (JsonGenerationException e) {
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+			ToXmlGenerator xGenerator;
+			try {
+				xGenerator = xfactory.createGenerator( new File( dataDir, "user.xml"), JsonEncoding.UTF8 );
+				xGenerator.useDefaultPrettyPrinter();
+				//xGenerator.writeStartObject();
+
+				xGenerator.writeStringField("node", "Test");
+
+				//xGenerator.writeEndObject();
+				xGenerator.close();	
+			} catch ( IOException e ) {
+				e.printStackTrace();
+			}
+			
 	}
 
 }
