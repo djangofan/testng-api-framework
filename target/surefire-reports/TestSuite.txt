@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.314 sec <<< FAILURE! - in TestSuite
+testXml(test.sample.TestJson)  Time elapsed: 0.044 sec  <<< FAILURE!
+java.lang.IllegalStateException: No element/attribute name specified when trying to output element
+	at com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator.handleMissingName(ToXmlGenerator.java:1042)
+	at com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator._handleStartObject(ToXmlGenerator.java:432)
+	at com.fasterxml.jackson.dataformat.xml.util.DefaultXmlPrettyPrinter.writeStartObject(DefaultXmlPrettyPrinter.java:198)
+	at com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator.writeStartObject(ToXmlGenerator.java:406)
+	at test.sample.TestJson.testXml(TestJson.java:69)
+

@@ -1,0 +1,16 @@
+{
+  "node" : {
+    "type" : "community",
+    "field_incentives" : {
+      "und" : [ {
+        "value" : "fun",
+        "value" : "nice"
+      } ]
+    },
+    "field_community_email" : {
+      "und" : [ {
+        "value" : "some@one.com"
+      } ]
+    }
+  }
+}
