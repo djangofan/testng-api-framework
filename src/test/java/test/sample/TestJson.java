@@ -62,22 +62,19 @@ public class TestJson {
 	
 	@Test
 	public void testXml() {
-
 			XmlFactory xfactory = new XmlFactory();
 			ToXmlGenerator xGenerator;
 			try {
 				xGenerator = xfactory.createGenerator( new File( dataDir, "user.xml"), JsonEncoding.UTF8 );
 				xGenerator.useDefaultPrettyPrinter();
-				//xGenerator.writeStartObject();
-
-				xGenerator.writeStringField("node", "Test");
-
-				//xGenerator.writeEndObject();
+				xGenerator.writeRaw("<baseNode>");
+				xGenerator.writeStringField("node1", "Test1");
+				xGenerator.writeStringField("node2", "Test2");
+				xGenerator.writeRaw("\n</baseNode>\n");
 				xGenerator.close();	
 			} catch ( IOException e ) {
 				e.printStackTrace();
-			}
-			
+			}			
 	}
 
 }
